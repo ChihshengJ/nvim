@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/Users/zs_jin/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["image.nvim"] = {
+    loaded = true,
+    path = "/Users/zs_jin/.local/share/nvim/site/pack/packer/start/image.nvim",
+    url = "https://github.com/3rd/image.nvim"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/Users/zs_jin/.local/share/nvim/site/pack/packer/start/lspkind.nvim",

@@ -120,6 +120,9 @@ return packer.startup(function(use)
 		},
 	})
 
+	-- image preview
+	use("3rd/image.nvim")
+
 	-- packer can manage itself
 	if packer_bootstrap then
 		require("packer").sync()
