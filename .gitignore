@@ -2,4 +2,4 @@ pack/
 swap/
 session/
 
-*.log
+**/*.log
