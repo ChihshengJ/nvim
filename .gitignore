@@ -1,3 +1,7 @@
 pack/
 swap/
 session/
+
+**/*.log
+
+.DS_Store

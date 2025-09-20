@@ -69,8 +69,13 @@ return packer.startup(function(use)
 	use("rafamadriz/friendly-snippets") -- useful snippets
 
 	-- managing & installing lsp servers, linters & formatters
-	use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
-	use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
+	use("mason-org/mason.nvim") -- in charge of managing lsp servers, linters & formatters
+	use({
+    "mason-org/mason-lspconfig.nvim",
+    requires = {
+      { "mason-org/mason.nvim" },
+    },
+  }) -- bridges gap b/w mason & lspconfig
 
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig") -- easily configure language servers
@@ -87,8 +92,15 @@ return packer.startup(function(use)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
 	-- formatting & linting
-	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
-	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
+	use({
+    "nvimtools/none-ls.nvim",
+    requires = {
+      { 'nvimtools/none-ls-extras.nvim' },
+      { 'jayp0521/mason-null-ls.nvim' }
+    },
+  })
+  -- configure formatters & linters
+  -- use('mfussenegger/nvim-lint')
 
 	-- treesitter configuration
 	use({
@@ -109,19 +121,13 @@ return packer.startup(function(use)
 	-- vimtex
 	use("lervag/vimtex")
 
-	-- remote-vim
-	use({
-		"amitds1997/remote-nvim.nvim",
-		version = "*", -- Pin to GitHub releases
-		requires = {
-			"nvim-lua/plenary.nvim", -- For standard functions
-			"MunifTanjim/nui.nvim", -- To build the plugin UI
-			"nvim-telescope/telescope.nvim", -- For picking b/w different remote methods
-		},
-	})
-
-	-- image preview
-	use("3rd/image.nvim")
+  -- markdown preview
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  })
 
 	-- plist manipulation
 	use("darfink/vim-plist")
