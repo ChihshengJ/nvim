@@ -25,7 +25,7 @@ mason_lspconfig.setup({
 		"rust_analyzer",
 		"harper_ls",
 		"lua_ls",
-		"pyright",
+		"pylsp",
 		"ltex",
 	},
 	-- auto-install configured servers (with lspconfig)

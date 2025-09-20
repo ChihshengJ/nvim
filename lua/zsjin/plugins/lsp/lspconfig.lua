@@ -51,7 +51,17 @@ lspconfig["harper_ls"].setup({
 	filetypes = { "c", "cpp", "markdown" },
 })
 
-lspconfig["pyright"].setup({
+lspconfig["pylsp"].setup({
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					ignore = { "W391" },
+					maxLineLength = 200,
+				},
+			},
+		},
+	},
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "python" },
@@ -61,6 +71,12 @@ lspconfig["ltex"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "tex" },
+})
+
+lspconfig["ts_ls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "js" },
 })
 
 lspconfig["rust_analyzer"].setup({
