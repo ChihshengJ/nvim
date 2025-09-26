@@ -45,7 +45,7 @@ opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.foldtext = ""
 opt.foldlevel = 99
 opt.foldlevelstart = 1
-opt.foldnestmax = 4
+opt.foldnestmax = 10
 
 opt.iskeyword:append("-")
 
@@ -66,45 +66,43 @@ g.loaded_ruby_provider = 0
 g.loaded_perl_provider = 0
 
 -- disable built-in plugins
--- local disabled_built_ins = {
--- 	"2html_plugin",
--- 	"getscript",
--- 	"getscriptPlugin",
--- 	"gzip",
--- 	"logipat",
--- 	"netrw",
--- 	"netrwPlugin",
--- 	"netrwSettings",
--- 	"netrwFileHandlers",
--- 	"matchit",
--- 	"tar",
--- 	"tarPlugin",
--- 	"rrhelper",
--- 	"spellfile_plugin",
--- 	"vimball",
--- 	"vimballPlugin",
--- 	"zip",
--- 	"zipPlugin",
--- }
---
--- for _, plugin in pairs(disabled_built_ins) do
--- 	g["loaded_" .. plugin] = 1
--- end
+local disabled_built_ins = {
+	"2html_plugin",
+	"getscript",
+	"getscriptPlugin",
+	"gzip",
+	"logipat",
+	"netrw",
+	"netrwPlugin",
+	"netrwSettings",
+	"netrwFileHandlers",
+	-- "matchit",
+	"tar",
+	"tarPlugin",
+	"rrhelper",
+	"spellfile_plugin",
+	"vimball",
+	"vimballPlugin",
+	"zip",
+	"zipPlugin",
+}
 
-g.do_filetype_lua = 1
+for _, plugin in pairs(disabled_built_ins) do
+	g["loaded_" .. plugin] = 1
+end
 
 -- override filetype
-vim.filetype.add({
-	-- extension = {
-	--     foo = "fooscript",
-	-- },
-	filename = {
-		["Podfile"] = "ruby",
-	},
-	pattern = {
-		[".*git/config"] = "gitconfig",
-		[".*env.*"] = "sh",
-	},
-})
+-- vim.filetype.add({
+-- 	-- extension = {
+-- 	--     foo = "fooscript",
+-- 	-- },
+-- 	filename = {
+-- 		["Podfile"] = "ruby",
+-- 	},
+-- 	pattern = {
+-- 		[".*git/config"] = "gitconfig",
+-- 		[".*env.*"] = "sh",
+-- 	},
+-- })
 
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:,diff:/]]
