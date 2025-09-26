@@ -10,8 +10,8 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	sources = {
 		-- Python linter & formatter
+		null_ls.builtins.code_actions.gitsigns,
 		require("none-ls.formatting.ruff").with({ extra_args = { "--extend-select", "I" } }),
-		require("none-ls.formatting.ruff_format"),
 		require("none-ls.diagnostics.ruff"),
 
 		-- other formatters/linters
