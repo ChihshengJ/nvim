@@ -12,7 +12,6 @@ null_ls.setup({
 		-- Python linter & formatter
 		null_ls.builtins.code_actions.gitsigns,
 		require("none-ls.formatting.ruff").with({ extra_args = { "--extend-select", "I" } }),
-		require("none-ls.diagnostics.ruff"),
 
 		-- other formatters/linters
 		formatting.prettier,
@@ -25,23 +24,19 @@ null_ls.setup({
 		}),
 	},
 
-	-- format on save
-	on_attach = function(client, bufnr)
-		if client.supports_method("textDocument/formatting") then
+  on_attach = function(client, bufnr)
+    if client.supports_method("textDocument/formatting") then
 			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = augroup,
-				buffer = bufnr,
-				callback = function()
-					vim.lsp.buf.format({
-						filter = function(c)
-							return c.name == "null-ls" -- only use null-ls for formatting
-						end,
-						bufnr = bufnr,
-					})
-				end,
-			})
-		end
-	end,
+      vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+          group = augroup,
+          buffer = bufnr,
+          callback = function()
+              -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+              -- on later neovim version, you should use vim.lsp.buf.format({ async = false }) instead
+              vim.lsp.buf.format({ async = false})
+          end,
+      })
+    end
+  end,
 })

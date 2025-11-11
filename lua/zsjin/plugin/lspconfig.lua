@@ -11,7 +11,7 @@ return {
 			"ts_ls",
 			"jsonls",
 			"eslint",
-			"pyright",
+			"basedpyright",
       "rust_analyzer",
 			"clangd",
 			"ltex",
