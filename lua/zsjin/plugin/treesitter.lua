@@ -2,7 +2,7 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
 	event = "BufReadPost",
-	auto_install = true,
+	auto_install = false,
 	cmd = {
 		"TSInstall",
 		"TSUpdate",
@@ -27,7 +27,7 @@ return {
 			"markdown",
 			"markdown_inline",
 			"python",
-			"ruby",
+			"rust",
 			"css",
 			"html",
 			"gitignore",
@@ -35,8 +35,13 @@ return {
 			"typst",
 			"latex",
 		},
-		highlight = { enable = true },
-		indent = { enable = true },
+		highlight = {
+			enable = true,
+			additional_vim_regex_highlighting = false,
+		},
+		indent = {
+			enable = true,
+		},
 	},
 	config = function(_, opts)
 		require("nvim-treesitter.configs").setup(opts)

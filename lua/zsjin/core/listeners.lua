@@ -15,10 +15,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		if client then
 			lsp_utils.on_attach(client, bufnr)
-		end
-
-		if client:supports_method("textDocument/inlayHint") then
-			vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+			if client:supports_method("textDocument/inlayHint") then
+				vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+			end
 		end
 
 		if client:supports_method("textDocument/foldingRange") then
