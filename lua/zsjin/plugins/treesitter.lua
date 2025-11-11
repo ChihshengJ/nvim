@@ -1,39 +1,49 @@
--- import nvim-treesitter plugin safely
-local status, treesitter = pcall(require, "nvim-treesitter.configs")
-if not status then
-	return
-end
-
--- configure treesitter
-treesitter.setup({
-	-- enable syntax highlighting
-	highlight = {
-		enable = true,
+return {
+	"nvim-treesitter/nvim-treesitter",
+	build = ":TSUpdate",
+	event = "BufReadPost",
+	auto_install = false,
+	cmd = {
+		"TSInstall",
+		"TSUpdate",
+		"TSInstallInfo",
+		"TSEnable",
+		"TSDisable",
+		"TSModuleInfo",
+		"TSUninstall",
 	},
-	-- enable indentation
-	indent = { enable = true },
-	-- enable autotagging (w/ nvim-ts-autotag plugin)
-	autotag = { enable = true },
-	-- ensure these language parsers are installed
-	ensure_installed = {
-		"json",
-		"javascript",
-		"typescript",
-		"tsx",
-		"yaml",
-		"html",
-		"css",
-		"markdown",
-		"markdown_inline",
-		"svelte",
-		"graphql",
-		"bash",
-		"lua",
-		"vim",
-		"dockerfile",
-		"gitignore",
-		"python",
+	opts = {
+		ensure_installed = {
+			"lua",
+			"vim",
+			"c",
+			"cpp",
+			"csv",
+			"comment",
+			"javascript",
+			"json",
+			"typescript",
+			"tsx",
+			"markdown",
+			"markdown_inline",
+			"python",
+			"rust",
+			"css",
+			"html",
+			"gitignore",
+			"yaml",
+			"typst",
+			"latex",
+		},
+		highlight = {
+			enable = true,
+			additional_vim_regex_highlighting = false,
+		},
+		indent = {
+			enable = true,
+		},
 	},
-	-- auto install above language parsers
-	auto_install = true,
-})
+	config = function(_, opts)
+		require("nvim-treesitter.configs").setup(opts)
+	end,
+}
