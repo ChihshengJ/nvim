@@ -12,10 +12,15 @@ return {
 			"jsonls",
 			"eslint",
 			"pyright",
+      "rust_analyzer",
 			"clangd",
-			"rust_analyzer",
 			"ltex",
 		},
 		automatic_installation = true,
+    automatic_enable = {
+      exclude = {
+        "rust_analyzer",
+      },
+    }
 	},
 }

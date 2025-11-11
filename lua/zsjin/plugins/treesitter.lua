@@ -27,7 +27,7 @@ return {
 			"markdown",
 			"markdown_inline",
 			"python",
-			"ruby",
+			"rust",
 			"css",
 			"html",
 			"gitignore",
