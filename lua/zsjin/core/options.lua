@@ -4,6 +4,8 @@ local g = vim.g
 g.mapleader = " "
 g.maplocalleader = " "
 
+g.have_nerd_font = true
+
 -- line numbers
 opt.relativenumber = false
 opt.number = true
@@ -44,15 +46,17 @@ opt.spelloptions = "camel"
 opt.splitright = true
 opt.splitbelow = true
 
--- folding
+-- config folding
 opt.foldmethod = "expr"
 opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.foldtext = ""
+opt.foldcolumn = "0"
+opt.statuscolumn = "%C%l "
 opt.foldlevel = 99
-opt.foldlevelstart = 1
+opt.foldlevelstart = 99 --using origami
 opt.foldnestmax = 10
-
 opt.iskeyword:append("-")
+opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 -- set maximum amount of completion items to 10
 opt.pumheight = 10
@@ -109,5 +113,4 @@ end
 -- 		[".*env.*"] = "sh",
 -- 	},
 -- })
-
-vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:,diff:/]]
+--

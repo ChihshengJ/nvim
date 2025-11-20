@@ -11,9 +11,11 @@ return {
 			"ts_ls",
 			"jsonls",
 			"eslint",
-			"pyright",
-			"rust_analyzer",
+			"basedpyright",
+      "rust_analyzer",
 			"clangd",
+      "harper-ls",
+      "texlab"
 		},
 		automatic_installation = true,
 		automatic_enable = {

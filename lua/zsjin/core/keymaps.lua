@@ -44,3 +44,8 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 
 -- restart lsp server
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+-- comment folding
+keymap.set("n", "<leader>/", function()
+	require("commentless").toggle()
+end)

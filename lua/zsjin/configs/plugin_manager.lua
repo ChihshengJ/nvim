@@ -1,7 +1,7 @@
 local signs = require("zsjin.utils").signs
 
 -- load lazy
-require("lazy").setup("zsjin.plugins", {
+require("lazy").setup("zsjin.plugin", {
 	install = { colorscheme = { "catppuccin" } },
 	defaults = { lazy = false },
 	checker = { enabled = true },
