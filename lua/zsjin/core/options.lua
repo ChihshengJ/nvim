@@ -35,6 +35,11 @@ opt.backspace = "indent,eol,start"
 -- clipboard
 opt.clipboard:append("unnamedplus")
 
+-- spelling
+opt.spell = true
+opt.spelllang = "en_us"
+opt.spelloptions = "camel"
+
 -- split windows
 opt.splitright = true
 opt.splitbelow = true
