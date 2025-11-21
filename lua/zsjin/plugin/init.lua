@@ -49,12 +49,13 @@ return {
 	-- git integration
 	"lewis6991/gitsigns.nvim",
 
-	-- markdown preview
+	-- Markdown preview
 	{
 		"iamcco/markdown-preview.nvim",
 		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
+		lazy = true,
 	},
 
 	-- plist manipulation

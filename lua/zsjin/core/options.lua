@@ -38,9 +38,9 @@ opt.backspace = "indent,eol,start"
 opt.clipboard:append("unnamedplus")
 
 -- spelling
-opt.spell = true
-opt.spelllang = "en_us"
-opt.spelloptions = "camel"
+-- opt.spell = true
+-- opt.spelllang = "en_us"
+-- opt.spelloptions = "camel"
 
 -- split windows
 opt.splitright = true
@@ -61,7 +61,7 @@ opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 -- set maximum amount of completion items to 10
 opt.pumheight = 10
 
--- complete even if there's only one item; do not autoselect item
+-- Complete even if there's only one item; do not autoselect item
 opt.completeopt = "menu,menuone,noselect"
 
 -- set minimal number of screen lines above and below cursor
