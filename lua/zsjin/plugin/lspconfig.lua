@@ -11,16 +11,19 @@ return {
 			"ts_ls",
 			"jsonls",
 			"eslint",
-			"basedpyright",
-      "rust_analyzer",
+			"ty",
+			"rust_analyzer",
 			"clangd",
-			"ltex",
+			"harper_ls",
+			"ltex_plus",
+			"texlab",
 		},
 		automatic_installation = true,
-    automatic_enable = {
-      exclude = {
-        "rust_analyzer",
-      },
-    }
+		automatic_enable = {
+			exclude = {
+				-- rustacean will load it
+				"rust_analyzer",
+			},
+		},
 	},
 }

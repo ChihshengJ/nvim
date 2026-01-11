@@ -13,9 +13,9 @@ return {
 		end
 
 		saga.setup({
-			-- keybinds for navigation in lspsaga window
+			-- Keybinds for navigation in lspsaga window
 			scroll_preview = { scroll_down = "<C-f>", scroll_up = "<C-b>" },
-			-- use enter to open file with definition preview
+			-- Use enter to open file with definition preview
 			definition = {
 				edit = "<CR>",
 			},

@@ -1,7 +1,12 @@
 return {
 	"chrisgrieser/nvim-origami",
 	event = "VeryLazy",
-	opts = {},
+	opts = {
+		autoFold = {
+			enabled = true,
+			kinds = { "comments", "imports", "region" },
+		},
+	},
 
 	init = function()
 		vim.opt.foldlevel = 99
