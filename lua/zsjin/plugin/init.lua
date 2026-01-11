@@ -52,10 +52,12 @@ return {
 	-- Markdown preview
 	{
 		"iamcco/markdown-preview.nvim",
-		build = function()
-			vim.fn["mkdp#util#install"]()
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		build = "cd app && npm install && git restore .",
+		init = function()
+			vim.g.mkdp_filetypes = { "markdown" }
 		end,
-		lazy = true,
+		ft = { "markdown" },
 	},
 
 	-- plist manipulation
