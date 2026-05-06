@@ -1,6 +1,9 @@
 local utils = require("zsjin.utils")
 local signs = utils.signs
 
+-- customized lsps
+vim.lsp.enable("sourcekit")
+
 local M = {}
 
 M.capabilities = require("blink.cmp").get_lsp_capabilities()

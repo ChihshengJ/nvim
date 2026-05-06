@@ -25,6 +25,15 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 keymap.set("n", "<leader>bp", ":bp<CR>") -- go to previous buffer
 keymap.set("n", "<leader>bn", ":bn<CR>") -- go to next buffer
 
+keymap.set("n", "<leader>vd", function()
+	vim.cmd("vsplit")
+	vim.lsp.buf.definition()
+end, { noremap = true, silent = true, desc = "Go to definition in vertical split" })
+keymap.set("n", "<leader>sd", function()
+	vim.cmd("split")
+	vim.lsp.buf.definition()
+end, { noremap = true, silent = true, desc = "Go to definition in horizontal split" })
+
 ----------------------
 -- Plugin Keybinds
 ----------------------
@@ -44,8 +53,3 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 
 -- restart lsp server
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
-
--- comment folding
-keymap.set("n", "<leader>/", function()
-	require("commentless").toggle()
-end)
