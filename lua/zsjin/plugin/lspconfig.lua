@@ -11,7 +11,6 @@ return {
 			"ts_ls",
 			"jsonls",
 			"eslint",
-			"ty",
 			"rust_analyzer",
 			"clangd",
 			"harper_ls",
@@ -23,6 +22,7 @@ return {
 			exclude = {
 				-- rustacean will load it
 				"rust_analyzer",
+				"ty",
 			},
 		},
 	},

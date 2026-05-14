@@ -3,6 +3,8 @@ local signs = utils.signs
 
 -- customized lsps
 vim.lsp.enable("sourcekit")
+vim.lsp.enable("ty")
+vim.lsp.enable("ruff")
 
 local M = {}
 

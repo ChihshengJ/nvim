@@ -1,49 +1,26 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	build = ":TSUpdate",
-	event = "BufReadPost",
-	auto_install = false,
-	cmd = {
-		"TSInstall",
-		"TSUpdate",
-		"TSInstallInfo",
-		"TSEnable",
-		"TSDisable",
-		"TSModuleInfo",
-		"TSUninstall",
-	},
-	opts = {
-		ensure_installed = {
-			"lua",
-			"vim",
-			"c",
-			"cpp",
-			"csv",
-			"comment",
-			"javascript",
-			"json",
-			"typescript",
-			"tsx",
-			"markdown",
-			"markdown_inline",
-			"python",
-			"rust",
-			"css",
-			"html",
-			"gitignore",
-			"yaml",
-			"typst",
-			"latex",
-		},
-		highlight = {
-			enable = true,
-			additional_vim_regex_highlighting = false,
-		},
-		indent = {
-			enable = true,
-		},
-	},
-	config = function(_, opts)
-		require("nvim-treesitter.configs").setup(opts)
-	end,
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  event = "BufReadPost",
+  cmd = {
+    "TSInstall",
+    "TSUpdate",
+    "TSInstallInfo",
+    "TSUninstall",
+  },
+  config = function()
+    -- enable highlighting for every filetype that has a parser
+    vim.api.nvim_create_autocmd("FileType", {
+      callback = function(args)
+        pcall(vim.treesitter.start, args.buf)
+      end,
+    })
+
+    -- activate for already-open buffers
+    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+      if vim.api.nvim_buf_is_loaded(buf) then
+        pcall(vim.treesitter.start, buf)
+      end
+    end
+  end,
 }
