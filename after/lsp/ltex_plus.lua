@@ -1,5 +1,5 @@
 return {
-	filetypes = { "tex", "bib", "html" },
+	filetypes = { "tex", "bib" },
 	settings = {
 		ltex = {
 			language = "en-US",

@@ -1,5 +1,5 @@
 return {
-	filetypes = { "javascript", "cpp", "python", "markdown", "rust" },
+	filetypes = { "markdown" },
 	settings = {
 		["harper-ls"] = {
 			linters = {
@@ -8,8 +8,8 @@ return {
 				AnA = true,
 				SentenceCapitalization = true,
 				UnclosedQuotes = true,
-				WrongQuotes = false,
-				LongSentences = true,
+				WrongQuotes = true,
+				LongSentences = false,
 				RepeatedWords = true,
 				Spaces = true,
 				Matcher = true,

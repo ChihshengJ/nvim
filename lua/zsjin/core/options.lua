@@ -36,6 +36,17 @@ opt.backspace = "indent,eol,start"
 
 -- clipboard
 opt.clipboard:append("unnamedplus")
+g.clipboard = {
+	name = "OSC 52",
+	copy = {
+		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+	},
+	paste = {
+		["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+		["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+	},
+}
 
 -- spelling
 -- opt.spell = true
@@ -99,18 +110,3 @@ local disabled_built_ins = {
 for _, plugin in pairs(disabled_built_ins) do
 	g["loaded_" .. plugin] = 1
 end
-
--- override filetype
--- vim.filetype.add({
--- 	-- extension = {
--- 	--     foo = "fooscript",
--- 	-- },
--- 	filename = {
--- 		["Podfile"] = "ruby",
--- 	},
--- 	pattern = {
--- 		[".*git/config"] = "gitconfig",
--- 		[".*env.*"] = "sh",
--- 	},
--- })
---

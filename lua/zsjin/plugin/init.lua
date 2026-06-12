@@ -43,7 +43,6 @@ return {
 	},
 
 	-- configuring lsp servers
-	"jose-elias-alvarez/typescript.nvim", -- additional functionality for typescript server (e.g. rename file & update imports,
 	"onsails/lspkind.nvim", -- vs-code like icons for autocompletion
 
 	-- git integration
@@ -56,6 +55,8 @@ return {
 		build = "cd app && npm install && git restore .",
 		init = function()
 			vim.g.mkdp_filetypes = { "markdown" }
+			vim.g.mkdp_open_to_the_world = 1
+			vim.g.mkdp_port = "11454"
 		end,
 		ft = { "markdown" },
 	},

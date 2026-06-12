@@ -14,14 +14,15 @@ null_ls.setup({
 		require("none-ls.formatting.ruff").with({ extra_args = { "--extend-select", "I" } }),
 
 		-- other formatters/linters
-		formatting.prettier,
+		-- formatting.prettier,
+		formatting.biome,
 		formatting.stylua,
 		formatting.shfmt.with({ args = { "-i", "4" } }),
-		require("none-ls.diagnostics.eslint").with({
-			condition = function(utils)
-				return utils.root_has_file(".eslintrc.js")
-			end,
-		}),
+		-- require("none-ls.diagnostics.eslint").with({
+		-- 	condition = function(utils)
+		-- 		return utils.root_has_file(".eslintrc.js")
+		-- 	end,
+		-- }),
 	},
 
 	on_attach = function(client, bufnr)
