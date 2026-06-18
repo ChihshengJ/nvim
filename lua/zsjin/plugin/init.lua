@@ -48,6 +48,9 @@ return {
 	-- git integration
 	"lewis6991/gitsigns.nvim",
 
+	-- git diff
+	"sindrets/diffview.nvim",
+
 	-- Markdown preview
 	{
 		"iamcco/markdown-preview.nvim",
