@@ -17,8 +17,6 @@ return {
 		keys = { "ys", "ds", "cs" },
 		config = true,
 	},
-	"inkarkat/vim-ReplaceWithRegister", -- replace with register contents using motion
-
 	-- vs-code like icons
 	"nvim-tree/nvim-web-devicons",
 
