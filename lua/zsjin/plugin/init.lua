@@ -48,6 +48,9 @@ return {
 	-- git integration
 	"lewis6991/gitsigns.nvim",
 
+	-- git diff
+	"sindrets/diffview.nvim",
+
 	-- Markdown preview
 	{
 		"iamcco/markdown-preview.nvim",
@@ -55,6 +58,8 @@ return {
 		build = "cd app && npm install && git restore .",
 		init = function()
 			vim.g.mkdp_filetypes = { "markdown" }
+			vim.g.mkdp_open_to_the_world = 1
+			vim.g.mkdp_port = "11454"
 		end,
 		ft = { "markdown" },
 	},
