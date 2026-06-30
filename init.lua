@@ -17,20 +17,20 @@ vim.opt.runtimepath:prepend(lazypath)
 vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
 
 -- core (cheap, load eagerly so keymaps/options are live from the first frame)
-require("zsjin.core.options")
-require("zsjin.core.keymaps")
+require("config.options")
+require("config.keymaps")
 
 -- plugins
-require("zsjin.configs.plugin_manager")
+require("config.lazy")
 
 -- LSP setup; runs after lazy so blink.cmp is resolvable for capabilities
-require("zsjin.core.lsp")
+require("config.lsp")
 
 -- anything that depends on plugins being available
 vim.api.nvim_create_autocmd("User", {
 	pattern = "VeryLazy",
 	callback = function()
-		require("zsjin.core.listeners")
-		require("zsjin.core.colorscheme")
+		require("config.autocmds")
+		require("config.colorscheme")
 	end,
 })

@@ -1,4 +1,4 @@
-local signs = require("zsjin.utils").signs
+local signs = require("utils").signs
 
 local conditions = {
 	buffer_not_empty = function()

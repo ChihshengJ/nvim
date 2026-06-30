@@ -1,4 +1,4 @@
-local signs = require("zsjin.utils").signs
+local signs = require("utils").signs
 
 -- ---------------------------------------------------------------------------
 -- Global LSP defaults (applied to every server via the "*" pseudo-config)

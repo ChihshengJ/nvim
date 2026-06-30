@@ -6,7 +6,7 @@ return {
 		"neovim/nvim-lspconfig",
 	},
 	opts = {
-		-- Install only. Enabling is owned by zsjin.core.lsp (vim.lsp.enable).
+		-- Install only. Enabling is owned by config.lsp (vim.lsp.enable).
 		ensure_installed = {
 			"lua_ls",
 			"jsonls",
