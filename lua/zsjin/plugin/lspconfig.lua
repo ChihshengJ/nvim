@@ -11,7 +11,6 @@ return {
 			"ts_ls",
 			"jsonls",
 			"eslint",
-			"ty",
 			"rust_analyzer",
 			"clangd",
 			"harper_ls",

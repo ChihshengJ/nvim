@@ -43,7 +43,6 @@ return {
 	},
 
 	-- configuring lsp servers
-	"jose-elias-alvarez/typescript.nvim", -- additional functionality for typescript server (e.g. rename file & update imports,
 	"onsails/lspkind.nvim", -- vs-code like icons for autocompletion
 
 	-- git integration
