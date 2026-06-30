@@ -14,7 +14,7 @@ null_ls.setup({
 		require("none-ls.formatting.ruff").with({ extra_args = { "--extend-select", "I" } }),
 
 		-- other formatters/linters
-		-- formatting.prettier,
+		formatting.prettier,
 		formatting.biome,
 		formatting.stylua,
 		formatting.shfmt.with({ args = { "-i", "4" } }),

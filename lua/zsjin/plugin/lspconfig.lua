@@ -8,9 +8,8 @@ return {
 	opts = {
 		ensure_installed = {
 			"lua_ls",
-			"ts_ls",
 			"jsonls",
-			"eslint",
+			"biome",
 			"rust_analyzer",
 			"clangd",
 			"harper_ls",
