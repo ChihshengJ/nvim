@@ -34,19 +34,9 @@ opt.signcolumn = "yes"
 -- backspace
 opt.backspace = "indent,eol,start"
 
--- clipboard
+-- clipboard (use the system clipboard; let Neovim auto-detect the provider,
+-- pbcopy/pbpaste on macOS)
 opt.clipboard:append("unnamedplus")
-g.clipboard = {
-	name = "OSC 52",
-	copy = {
-		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-	},
-	paste = {
-		["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-		["*"] = require("vim.ui.clipboard.osc52").paste("*"),
-	},
-}
 
 -- spelling
 -- opt.spell = true

@@ -1,4 +1,4 @@
-local signs = require("zsjin.utils").signs
+local signs = require("utils").signs
 
 return {
   "mason-org/mason.nvim",

@@ -17,11 +17,6 @@ return {
 		keys = { "ys", "ds", "cs" },
 		config = true,
 	},
-	"inkarkat/vim-ReplaceWithRegister", -- replace with register contents using motion
-
-	-- commenting with gc
-	"numToStr/Comment.nvim",
-
 	-- vs-code like icons
 	"nvim-tree/nvim-web-devicons",
 
@@ -29,20 +24,7 @@ return {
 	"L3MON4D3/LuaSnip", -- snippet engine
 	"rafamadriz/friendly-snippets", -- useful snippets
 
-	--LSP related
-	{
-		"nvimtools/none-ls.nvim",
-		dependencies = {
-			"lukas-reineke/lsp-format.nvim",
-			"nvimtools/none-ls-extras.nvim",
-			"jayp0521/mason-null-ls.nvim",
-		},
-		config = function()
-			require("zsjin.configs.null_ls")
-		end,
-	},
-
-	-- configuring lsp servers
+	-- icons for autocompletion menus
 	"onsails/lspkind.nvim", -- vs-code like icons for autocompletion
 
 	-- git integration

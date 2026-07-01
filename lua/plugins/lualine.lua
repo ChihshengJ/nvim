@@ -1,4 +1,4 @@
-local signs = require("zsjin.utils").signs
+local signs = require("utils").signs
 
 local conditions = {
 	buffer_not_empty = function()
@@ -23,9 +23,7 @@ local function get_lsp(msg)
 	local buf_client_names = {}
 
 	for _, client in pairs(buf_clients) do
-		if client.name ~= "null-ls" then
-			table.insert(buf_client_names, client.name)
-		end
+		table.insert(buf_client_names, client.name)
 	end
 
 	return table.concat(buf_client_names, ", ")

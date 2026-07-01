@@ -1,4 +1,4 @@
-local utils = require("zsjin.utils")
+local utils = require("utils")
 local signs = utils.signs
 
 return {

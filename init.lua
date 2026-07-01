@@ -1,6 +1,6 @@
 -- bootstrap from github
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
 		"clone",
@@ -12,16 +12,25 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
-require("zsjin.core.options") -- vim options
-require("zsjin.configs.plugin_manager")
+-- Make mason-installed tools (stylua, shfmt, prettier, biome, ...) resolvable
+-- even before mason.nvim is lazily loaded, so conform/formatters find them.
+vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
 
+-- core (cheap, load eagerly so keymaps/options are live from the first frame)
+require("config.options")
+require("config.keymaps")
+
+-- plugins
+require("config.lazy")
+
+-- LSP setup; runs after lazy so blink.cmp is resolvable for capabilities
+require("config.lsp")
+
+-- anything that depends on plugins being available
 vim.api.nvim_create_autocmd("User", {
 	pattern = "VeryLazy",
 	callback = function()
-		require("zsjin.core.listeners")
-		require("zsjin.core.keymaps")
-		require("zsjin.core.diagnostics")
-		require("zsjin.core.capabilities")
-		require("zsjin.core.colorscheme")
+		require("config.autocmds")
+		require("config.colorscheme")
 	end,
 })

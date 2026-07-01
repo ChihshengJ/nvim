@@ -6,6 +6,7 @@ return {
 		"neovim/nvim-lspconfig",
 	},
 	opts = {
+		-- Install only. Enabling is owned by config.lsp (vim.lsp.enable).
 		ensure_installed = {
 			"lua_ls",
 			"jsonls",
@@ -17,13 +18,6 @@ return {
 			"texlab",
 		},
 		automatic_installation = true,
-		automatic_enable = {
-			exclude = {
-				-- rustacean will load it
-				"rust_analyzer",
-        -- externally managed
-				"ty",
-			},
-		},
+		automatic_enable = false,
 	},
 }
