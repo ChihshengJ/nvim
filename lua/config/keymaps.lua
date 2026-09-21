@@ -53,3 +53,6 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 
 -- restart lsp server
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+-- diffview
+vim.cmd([[cnoreabbrev <expr> dv (getcmdtype() == ':' && getcmdline() ==# 'dv') ? 'DiffviewOpen' : 'dv']]) -- :dv expands to :DiffviewOpen
