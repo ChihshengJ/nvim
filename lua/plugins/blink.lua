@@ -1,6 +1,6 @@
 return {
 	"saghen/blink.cmp",
-	-- build = "cargo build --release",
+	build = "cargo build --release",
 	branch = "v1",
 	event = "InsertEnter",
 	dependencies = {
@@ -30,6 +30,7 @@ return {
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
 		},
+		fuzzy = { implementation = "prefer_rust" },
 	},
 	opts_extend = { "sources.default" },
 }

@@ -40,8 +40,14 @@ return {
 		build = "cd app && npm install && git restore .",
 		init = function()
 			vim.g.mkdp_filetypes = { "markdown" }
-			vim.g.mkdp_open_to_the_world = 1
+			-- localhost only; over SSH reach it with `ssh -L 11454:localhost:11454 <host>`
 			vim.g.mkdp_port = "11454"
+			if vim.env.SSH_CONNECTION then
+				-- don't launch a browser on the remote box, just echo the URL to open locally
+				vim.cmd("function! MkdpNoBrowser(url)\nendfunction")
+				vim.g.mkdp_browserfunc = "MkdpNoBrowser"
+				vim.g.mkdp_echo_preview_url = 1
+			end
 		end,
 		ft = { "markdown" },
 	},
