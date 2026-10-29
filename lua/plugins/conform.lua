@@ -26,7 +26,7 @@ return {
 			css = { "biome" },
 			html = { "prettier" },
 			yaml = { "prettier" },
-			markdown = { "prettier" },
+			-- markdown = { "prettier" },
 		},
 		formatters = {
 			shfmt = {
