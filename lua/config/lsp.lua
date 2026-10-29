@@ -31,7 +31,7 @@ vim.lsp.enable({
 	"lua_ls",
 	"jsonls",
 	"biome",
-	"ts_ls",
+	"tsc",
 	"clangd",
 	"harper_ls",
 	"ltex_plus",
