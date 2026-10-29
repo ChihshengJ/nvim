@@ -42,11 +42,11 @@ return {
 			vim.g.mkdp_filetypes = { "markdown" }
 			-- localhost only; over SSH reach it with `ssh -L 11454:localhost:11454 <host>`
 			vim.g.mkdp_port = "11454"
+			vim.g.mkdp_echo_preview_url = 1
 			if vim.env.SSH_CONNECTION then
-				-- don't launch a browser on the remote box, just echo the URL to open locally
+				-- don't launch a browser on the remote box; open the echoed URL locally
 				vim.cmd("function! MkdpNoBrowser(url)\nendfunction")
 				vim.g.mkdp_browserfunc = "MkdpNoBrowser"
-				vim.g.mkdp_echo_preview_url = 1
 			end
 		end,
 		ft = { "markdown" },
